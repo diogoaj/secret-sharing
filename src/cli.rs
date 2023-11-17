@@ -19,8 +19,6 @@ pub struct SplitArgs {
     pub threshold: u8,
     #[arg(short)]
     pub number: u8,
-    #[arg(long)]
-    pub in_secret: String,
 }
 
 #[derive(Args, Debug)]

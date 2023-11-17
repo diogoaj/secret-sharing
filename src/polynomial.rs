@@ -85,13 +85,13 @@ pub fn combine(shares: &Vec<Vec<u8>>) -> Vec<u8> {
             y_shares[j] = shares[j][i];
         }
 
-        let b = _lagrange_interpolation(&x_shares, &y_shares, 0);
+        let b = lagrange_interpolation(&x_shares, &y_shares, 0);
         secret[i] = b;
     }
     secret
 }
 
-fn _lagrange_interpolation(x_shares: &Vec<u8>, y_shares: &Vec<u8>, x: u8) -> u8 {
+fn lagrange_interpolation(x_shares: &Vec<u8>, y_shares: &Vec<u8>, x: u8) -> u8 {
     let k = x_shares.len();
     let mut result = 0;
     let mut basis;

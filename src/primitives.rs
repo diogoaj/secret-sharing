@@ -1,4 +1,4 @@
-// Galois Fields GF(2^8) operations
+// GF(2^8) operations
 pub fn add(a: u8, b: u8) -> u8 {
     a ^ b
 }
@@ -25,10 +25,10 @@ pub fn div(a: u8, b: u8) -> u8 {
     if b == 0 {
         panic!("Division by zero!");
     }
-    return mult(a, _invert(b));
+    return mult(a, invert(b));
 }
 
-fn _invert(b: u8) -> u8 {
+fn invert(b: u8) -> u8 {
     let mut z = b;
     for _ in 0..6 {
         z = mult(z, z);
